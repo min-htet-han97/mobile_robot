@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<launch>
+
+    <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find ros_control)/urdf/mobile_robot_advanced/main.xacro'"/>
+	
+    <!--rosparam file="$(find ros_control)/config/mobile_robot_control.yaml" command="load"/-->
+	
+	 <!--param name="robot_description" textfile="$(find ros_control)/urdf/mobile_robot_tutorial.urdf"/--> 
+	
+	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+
+	<!--node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/--> 
+
+			 <!-- <param name="use_gui" value="True"/>
+	</node>    -->
+	<!--node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="0 0 0 0 0 0 0 /odom /base_link 10" /-->
+
+	<!--node name="rviz" pkg="rviz" type="rviz"/-->
+
+	<node name="mobile_robot" pkg="gazebo_ros" type="spawn_model" output="screen"
+              args="-urdf -param robot_description -model mobile_robot" />
+
+
+	
+ <!--node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false" output="screen"
+        args="
+            /MobileRobot/joint_state_controller
+            /MobileRobot/front_right_wheel_controller
+            /MobileRobot/front_left_wheel_controller
+            /MobileRobot/back_right_wheel_controller
+            /MobileRobot/back_left_wheel_controller
+          
+        "></node--> 
+
+
+</launch>

@@ -1,0 +1,18 @@
+MobileRobot:
+  back_left_wheel_controller:
+    joint: back_left_joint
+    pid: {d: 0.1, i: 10.0, p: 100.0}
+    type: velocity_controllers/JointVelocityController
+  back_right_wheel_controller:
+    joint: back_right_joint
+    pid: {d: 0.1, i: 10.0, p: 100.0}
+    type: velocity_controllers/JointVelocityController
+  front_left_wheel_controller:
+    joint: front_left_joint
+    pid: {d: 0.1, i: 10.0, p: 100.0}
+    type: velocity_controllers/JointVelocityController
+  front_right_wheel_controller:
+    joint: front_right_joint
+    pid: {d: 0.1, i: 10.0, p: 100.0}
+    type: velocity_controllers/JointVelocityController
+  joint_state_controller: {publish_rate: 50, type: joint_state_controller/JointStateController}
